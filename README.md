@@ -31,7 +31,7 @@ Next via terminal `cd` into the folder where docker-compose.yml is and run the c
     ./gradlew bootRun
 
 
-Just to see if it's working try to run a curl request, or postman, whatever you normally use, copy and paste this request in and you should get a response:
+Just to see if it's working try to run a curl request, or postman, whatever you normally use, copy and paste this request in and you should get a response that the user was created:
 
     curl --location --request POST 'http://localhost:8080/api/auth/signup/' \
          --header 'Content-Type: application/json' \
@@ -41,6 +41,7 @@ Just to see if it's working try to run a curl request, or postman, whatever you 
             "role": ["admin"],
             "password": "password"
          }'
+         
 
 Original readme content is below, note, you do not need to run the insert statements for the role table, as I included an init script already which runs with ApplicationRunner.
 
