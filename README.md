@@ -31,6 +31,17 @@ Next via terminal `cd` into the folder where docker-compose.yml is and run the c
     ./gradlew bootRun
 
 
+Just to see if it's working try to run a curl request, or postman, whatever you normally use, copy and paste this request in and you should get a response:
+
+    curl --location --request POST 'http://localhost:8080/api/auth/signup/' \
+         --header 'Content-Type: application/json' \
+         --data-raw '{
+            "email": "fake12@test.com",
+            "username": "someguy196912",
+            "role": ["admin"],
+            "password": "password"
+         }'
+
 Original readme content is below, note, you do not need to run the insert statements for the role table, as I included an init script already which runs with ApplicationRunner.
 
 Also, the docker-compose mysql setup already matches the configuration in the application.properties, so you won't need to change that.
