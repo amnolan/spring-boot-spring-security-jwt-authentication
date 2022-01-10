@@ -36,8 +36,8 @@ Just to see if it's working try to run a curl request, or postman, whatever you 
     curl --location --request POST 'http://localhost:8080/api/auth/signup/' \
          --header 'Content-Type: application/json' \
          --data-raw '{
-            "email": "fake12@example.com",
-            "username": "someguy196912",
+            "email": "user@example.com",
+            "username": "user_admin",
             "role": ["admin"],
             "password": "password"
          }'
