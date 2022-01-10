@@ -1,3 +1,40 @@
+# Spring Boot JWT Authentication example with Spring Security & Spring Data JPA with Gradle
+
+## Use
+
+Once you clone this project, from the root folder (where you can see the gradlew binary), do the following:
+  
+First copy the docker-compose.yml into any directory outside the project. I had issues with running it from inside the project folder while the IDE was running.
+Next via terminal `cd` into the folder where docker-compose.yml is and run the command. If you're running Windows, just exclude the `./` from the commands:
+
+    # from the folder where you put your docker-compose.yml create your database container
+    ./docker-compose up
+    
+    # to list your containers
+    ./docker ps
+    
+    # find the container name or id and then do the command, to get into bash:
+    ./docker exec -it <container name or id> /bin/bash
+    
+    # now we have to expose the user to be usable by your application
+    ./mysql -uroot -p
+    
+    # enter password as "password" and hit enter
+    # run sql statements on your user
+    update mysql.user set host = '%' where user='root';
+    FLUSH PRIVILEGES;
+ 
+    # from the root folder of the project build and start your application
+    ./gradlew clean build
+    ./gradlew bootRun
+
+
+Original readme content is below, note, you do not need to run the insert statements for the role table, as I included an init script already which runs with ApplicationRunner.
+
+Also, the docker-compose mysql setup already matches the configuration in the application.properties, so you won't need to change that.
+
+------------------------------------------------------------------------------
+
 # Spring Boot JWT Authentication example with Spring Security & Spring Data JPA
 
 ## User Registration, User Login and Authorization process.
