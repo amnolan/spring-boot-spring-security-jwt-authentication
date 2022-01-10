@@ -12,7 +12,7 @@ Next via terminal `cd` into the folder where docker-compose.yml is and run the c
     # from the folder where you put your docker-compose.yml create your database container
     ./docker-compose up
     
-    # to list your containers
+    # in a NEW terminal window - list your containers
     ./docker ps
     
     # find the container name or id and then do the command, to get into bash:
