@@ -3,6 +3,8 @@
 ## Use
 
 Once you clone this project, from the root folder (where you can see the gradlew binary), do the following:
+
+If you don't have docker-compose (which should be included with docker), go download and [install](https://www.docker.com/products/docker-desktop) it now for your OS .
   
 First copy the docker-compose.yml into any directory outside the project. I had issues with running it from inside the project folder while the IDE was running.
 Next via terminal `cd` into the folder where docker-compose.yml is and run the command. If you're running Windows, just exclude the `./` from the commands:
