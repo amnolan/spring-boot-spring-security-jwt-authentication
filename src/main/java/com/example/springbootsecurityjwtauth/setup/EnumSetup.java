@@ -21,13 +21,12 @@ public class EnumSetup implements ApplicationRunner {
 
     }
 
-    public void run(ApplicationArguments args) throws IOException {
-        Role userRole = new Role(ERole.ROLE_USER);
-        Role adminRole = new Role(ERole.ROLE_ADMIN);
-        Role moderatorRole = new Role(ERole.ROLE_MODERATOR);
-        roleRepository.save(userRole);
-        roleRepository.save(adminRole);
-        roleRepository.save(moderatorRole);
+    public void run(ApplicationArguments args) {
+        if(roleRepository.countRoles()==0){
+            roleRepository.save(new Role(ERole.ROLE_USER));
+            roleRepository.save(new Role(ERole.ROLE_ADMIN));
+            roleRepository.save(new Role(ERole.ROLE_MODERATOR));
+        }
     }
 
 }
