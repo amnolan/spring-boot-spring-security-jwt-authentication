@@ -22,8 +22,10 @@ Next via terminal `cd` into the folder where docker-compose.yml is and run the c
     ./mysql -uroot -p
     
     # enter password as "password" and hit enter
+    Enter password:password
+    
     # run sql statements on your user
-    update mysql.user set host = '%' where user='root';
+    ALTER USER 'user'@'%' IDENTIFIED BY 'password';
     FLUSH PRIVILEGES;
  
     # from the root folder of the project build and start your application
